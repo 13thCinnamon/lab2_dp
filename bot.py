@@ -12,16 +12,11 @@ async def process_start_command(message: types.Message):
 
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
-    await message.reply("/address - узнать адреса и кабинеты интересующих тебя мест\n/map - карта корпусов университета\n/email - узнать эл. адреса преподователей")
+    await message.reply("/map - карта корпусов университета\n/email - узнать эл. адреса преподователей")
 
 @dp.message_handler(commands=['map'])
 async def process_help_command(message: types.Message):
     await bot.send_photo(message.from_user.id, types.InputFile('_04042019.jpg'), reply_to_message_id=message.message_id)
-
-@dp.message_handler(commands=['address'])
-async def address(message):
-    await message.reply('Какое именно место вас интересует?')
-
 
 
 @dp.message_handler(commands=['email'])
